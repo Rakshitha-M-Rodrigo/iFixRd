@@ -33,7 +33,7 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(getWindow().FEATURE_NO_TITLE);
+       // requestWindowFeature(getWindow().FEATURE_NO_TITLE);
 
          int travelMode = getIntent().getIntExtra("selectedMode",0);// set default value
         Log.d("Travelmode", String.valueOf(travelMode));

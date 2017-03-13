@@ -21,7 +21,7 @@ public class TravelingModeSelection extends Activity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(getWindow().FEATURE_NO_TITLE);
+        //requestWindowFeature(getWindow().FEATURE_NO_TITLE);
         setContentView(R.layout.activity_traveling_mode_selection);
 
         driver= (ImageButton) findViewById(R.id.driver);
