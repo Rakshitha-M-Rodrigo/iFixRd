@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="fab_bomb">#8585ad</color>
+    <color name="fab_flag">#2d862d</color>
+    <color name="fab_beacon"> #cc0000</color>
+    <color name="fab_mainmenu"> #005266</color>
+</resources>
