@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_traveling_mode_selection"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kmap.mobileaccelerometer.TravelingModeSelection"
+    android:background="@color/colorIvory">
+
+    <ImageButton
+        android:id="@+id/driver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_driver"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp" />
+
+    <ImageButton
+        android:id="@+id/walker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_walker"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/passenger"
+        android:layout_alignLeft="@+id/passenger"
+        android:layout_alignStart="@+id/passenger" />
+
+    <ImageButton
+        android:id="@+id/passenger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_passenger"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="35dp"
+        android:layout_alignLeft="@+id/driver"
+        android:layout_alignStart="@+id/driver" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Mode"
+        android:id="@+id/textView"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkGray"
+        tools:fontFamily="serif-monospace"
+        android:fontFamily="monospace"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp" />
+
+
+</RelativeLayout>
