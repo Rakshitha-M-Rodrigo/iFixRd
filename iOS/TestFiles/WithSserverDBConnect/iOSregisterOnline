@@ -1,0 +1,48 @@
+//send user data to server side
+let myUrl = NSURL(string:"url of the userRegister.php");
+let request = NSMutableURLRequest(URL:myUrl!);
+request.HTTPMethod = "POST";
+
+let postString = "email=\(userEmail)&password=\(userPassword)";
+request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
+
+//handle the json data
+let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+  data, response, error in
+
+  if error != nil {
+    println("error=\(error)")
+    return
+  }
+
+  var err: NSError?
+  var json = NSJSONSerialization.JSONObjectWithData(data, options: . MutableContainers, error: &err) as? NSDictionary
+
+  if let parseJSON   = json {
+    var resultValue = parseJSON["status"] as? String
+    println("result: \(resultValue)")
+
+    var isUserRegistered:Bool = false;
+    if(resultValue=="Success"){isUserRegistered = true;}
+
+    var messageToDisplay:String = parseJSON["message"] as String!;
+    if(!isUserRegistered){
+      messageToDisplay = parseJSON["message"] as String!;
+    }
+
+
+    dispatch_async(dispatch_get_main_queue(), {
+      //Display Alert message with confirmation
+      var myAlert = UIAlertController(title:"Alert", message:messageToDisplay, preferredStyle:UIAlertControllerStyle.Alert);
+
+      let okAction = UIAlertAction(title:"OK", style:UIAlertStyle.Default){
+        action in
+        self.dismissViewControllerAnimated(true, completiion:nil);
+
+      }
+      myAlert.addAction(okAction);
+      self.presentViewController(myAlert, animated:true, completiion:nil)
+    });
+  }
+}
+task.resume()
