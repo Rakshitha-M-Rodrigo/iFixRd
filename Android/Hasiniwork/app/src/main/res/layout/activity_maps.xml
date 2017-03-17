@@ -1,0 +1,228 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_maps"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+<fragment
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_action_mainmenu"
+        app:backgroundTint="@color/fab_mainmenu"
+        android:id="@+id/fab_mainmenu"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/fab_settings" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_action_flag"
+        android:id="@+id/fab_flag"
+        app:backgroundTint="@color/fab_flag"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_blocktype"
+        android:visibility="invisible"
+        app:backgroundTint="@color/fab_bomb"
+        android:id="@+id/fab_blocktype"
+        android:layout_alignTop="@+id/fab_bomb"
+        android:layout_toEndOf="@+id/fab_landminetype"
+        android:layout_marginTop="10dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_landminetype"
+        android:visibility="invisible"
+        app:backgroundTint="@color/fab_bomb"
+        android:id="@+id/fab_landminetype"
+
+        android:layout_marginStart="23dp"
+        android:layout_above="@+id/fab_blocktype"
+        android:layout_toEndOf="@+id/fab_bomb" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_found"
+        app:backgroundTint="@color/fab_flag"
+        android:id="@+id/fab_found"
+        android:visibility="invisible"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/fab_landminetype" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_notfound"
+        android:id="@+id/fab_notfound"
+        app:backgroundTint="@color/fab_flag"
+        android:visibility="invisible"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/fab_found"
+        android:layout_marginStart="12dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_solved"
+        app:backgroundTint="@color/fab_flag"
+        android:id="@+id/fab_solved"
+        android:visibility="invisible"
+        android:layout_below="@+id/fab_settings"
+        android:layout_toEndOf="@+id/fab_notfound"
+        android:layout_marginStart="13dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_accident"
+        app:backgroundTint="@color/fab_beacon"
+        android:id="@+id/fab_accident"
+        android:visibility="invisible"
+        android:layout_alignTop="@+id/fab_beacon"
+        android:layout_alignStart="@+id/fab_found" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_tire"
+        app:backgroundTint="@color/fab_beacon"
+        android:id="@+id/fab_tire"
+        android:visibility="invisible"
+        android:layout_alignTop="@+id/fab_accident"
+        android:layout_alignStart="@+id/fab_notfound" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_medical"
+        app:backgroundTint="@color/fab_beacon"
+        android:id="@+id/fab_medical"
+        android:visibility="invisible"
+        android:layout_alignTop="@+id/fab_tire"
+        android:layout_alignStart="@+id/fab_solved" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_repair"
+        app:backgroundTint="@color/fab_flag"
+        android:id="@+id/fab_repair"
+        android:visibility="invisible"
+        android:layout_marginStart="13dp"
+        android:layout_below="@+id/fab_settings"
+        android:layout_toEndOf="@+id/fab_solved" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_bomb"
+        app:backgroundTint="@color/fab_bomb"
+        android:id="@+id/fab_bombtype"
+        android:visibility="invisible"
+        android:layout_above="@+id/fab_app"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="65dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_action_becon"
+        android:id="@+id/fab_beacon"
+        app:backgroundTint="@color/fab_beacon"
+        android:layout_alignBottom="@+id/fab_settings"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="27dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_action_becon"
+        android:id="@+id/fab_"
+        app:backgroundTint="@color/fab_beacon"
+        android:layout_alignBottom="@+id/fab_settings"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="27dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_action_setting"
+        app:backgroundTint="@color/fab_mainmenu"
+        android:id="@+id/fab_settings"
+        android:visibility="invisible"
+        android:layout_marginBottom="12dp"
+        android:layout_above="@+id/fab_mainmenu"
+        android:layout_alignParentEnd="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_action_app"
+        app:backgroundTint="@color/fab_mainmenu"
+        android:id="@+id/fab_app"
+        app:pressedTranslationZ="12dp"
+        android:visibility="invisible"
+        android:layout_above="@+id/fab_settings"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="13dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_action_bomb"
+        android:id="@+id/fab_bomb"
+        app:backgroundTint="@color/fab_bomb"
+        android:layout_above="@+id/fab_app"
+        android:layout_alignParentStart="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_action_map"
+        android:id="@+id/fab_map"
+        app:pressedTranslationZ="12dp"
+        android:visibility="invisible"
+        app:backgroundTint="@color/fab_mainmenu"
+        android:layout_above="@+id/fab_app"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="17dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:visibility="invisible"
+        android:src="@drawable/ic_action_profilepic"
+        android:id="@+id/fab_profilepic"
+        app:backgroundTint="@color/fab_mainmenu"
+        android:layout_above="@+id/fab_landminetype"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>
+
+
